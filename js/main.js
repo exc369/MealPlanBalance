@@ -44,7 +44,5 @@ console.log("Days remaining:", days_remaining)
 for (var k = 0; k < 7; k++) {
   var dollars_per_day = initial_dollars[k] / days_in_semester;
   remaining_dollars_amounts.push(Math.round(days_remaining * dollars_per_day))
-}
-for (var i = 0; i < dollars_elements.length; i++) {
-  dollars_elements[i].innerHTML = remaining_dollars_amounts[i];
+  dollars_elements[k].innerHTML = "$" + remaining_dollars_amounts[k];
 }
