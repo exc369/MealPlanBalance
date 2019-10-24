@@ -25,50 +25,88 @@
   <!-- Add your site or application content here -->
   <h1>Meal Plan Balancer</h1>
   <h2><a href="http://tribecard.wm.edu" target="blank">View your remaining balance here</a></h2>
-<center>
+  <h2 id="out_of_semester_text"></h2>
+  <center>
 
-  <table align="left" cellspacing="5" cellpadding="5" border="2">
-  <tr>
-  <th> Freedom </th>
-  <th> Gold 19 </th>
-  <th> Block 175 </th>
-  <th> Block 125 </th>
-  <th> Block 100 </th>
-  <th> Commuter 50 </th>
-  <th> Commuter 25 </th>
-  </tr>
-  <tr>
-  <td> Dining Dollars Remaining: <br> <p id='fdollars'></p> </td>
-  <td> Dining Dollars Remaining: <br> <p id='19dollars'></p> </td>
-  <td> Dining Dollars Remaining: <br> <p id='175dollars'></p> </td>
-  <td> Dining Dollars Remaining: <br> <p id='125dollars'></p> </td>
-  <td> Dining Dollars Remaining: <br> <p id='100dollars'></p> </td>
-  <td> Dining Dollars Remaining: <br> <p id='50dollars'></p> </td>
-  <td> Dining Dollars Remaining: <br> <p id='25dollars'></p> </td>
-  </tr>
-  <tr>
-  <tr>
-  <td> Swipes Remaining: <br> <p id='fswipes'>N/A (Unlimited)</p> </td>
-  <td> Swipes Remaining: <br> <p id='19swipes'>N/A</p> </td>
-  <td> Swipes Remaining: <br> <p id='175swipes'></p> </td>
-  <td> Swipes Remaining: <br> <p id='125swipes'></p> </td>
-  <td> Swipes Remaining: <br> <p id='100swipes'></p> </td>
-  <td> Swipes Remaining: <br> <p id='50swipes'></p> </td>
-  <td> Swipes Remaining: <br> <p id='25swipes'></p> </td>
-  </tr>
-  <tr>
-  </table>
+    <table align="left" cellspacing="5" cellpadding="5" border="2">
+      <tr>
+        <th> Freedom </th>
+        <th> Gold 19 </th>
+        <th> Block 175 </th>
+        <th> Block 125 </th>
+        <th> Block 100 </th>
+        <th> Commuter 50 </th>
+        <th> Commuter 25 </th>
+      </tr>
+      <tr>
+        <td> Dining Dollars Remaining: <br>
+          <p id='fdollars'></p>
+        </td>
+        <td> Dining Dollars Remaining: <br>
+          <p id='19dollars'></p>
+        </td>
+        <td> Dining Dollars Remaining: <br>
+          <p id='175dollars'></p>
+        </td>
+        <td> Dining Dollars Remaining: <br>
+          <p id='125dollars'></p>
+        </td>
+        <td> Dining Dollars Remaining: <br>
+          <p id='100dollars'></p>
+        </td>
+        <td> Dining Dollars Remaining: <br>
+          <p id='50dollars'></p>
+        </td>
+        <td> Dining Dollars Remaining: <br>
+          <p id='25dollars'></p>
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td> Swipes Remaining: <br>
+          <p id='fswipes'>N/A (Unlimited)</p>
+        </td>
+        <td> Swipes Remaining: <br>
+          <p id='19swipes'>N/A</p>
+        </td>
+        <td> Swipes Remaining: <br>
+          <p id='175swipes'></p>
+        </td>
+        <td> Swipes Remaining: <br>
+          <p id='125swipes'></p>
+        </td>
+        <td> Swipes Remaining: <br>
+          <p id='100swipes'></p>
+        </td>
+        <td> Swipes Remaining: <br>
+          <p id='50swipes'></p>
+        </td>
+        <td> Swipes Remaining: <br>
+          <p id='25swipes'></p>
+        </td>
+      </tr>
+      <tr>
+    </table>
   </center>
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+  </script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
