@@ -12,40 +12,54 @@ Date.daysBetween = function(date1, date2) {
   // Convert back to days and return
   return Math.round(difference_ms / one_day);
 };
-function setSemester(today) {
+
+function getCurrentSemester(today) {
   const time = today.getTime();
-  const f19_start = new Date(2019, 7, 28).getTime(),
-    f19_end = new Date(2019, 11, 19).getTime();
-  const s20_start = new Date(2019, 0, 22),
-    s20_end = new Date(2019, 4, 17);
-  if (time < f19_end && time > f19_start) {
-    return {
-      start: new Date(2019, 7, 28),
-      end: new Date(2019, 11, 19)
-    };
-  } else if (time < s20_end && time > s20_start) {
-    return {
-      start: new Date(2019, 0, 19),
-      end: new Date(2019, 4, 14)
-    };
-  } else {
-    return {
-      start: null,
-      end: null
-    };
+  const f19 = {
+    start: new Date(2019, 7, 28),
+    end: new Date(2019, 11, 19)
+  };
+  const s20 = {
+    start: new Date(2019, 0, 22),
+    end: new Date(2019, 4, 14)
+  };
+  const f20 = {
+    start: new Date(2019, 0, 22),
+    end: new Date(2019, 4, 14)
+  };
+  const s21 = {
+    start: new Date(2019, 0, 22),
+    end: new Date(2019, 4, 14)
+  };
+  const f21 = {
+    start: new Date(2019, 0, 22),
+    end: new Date(2019, 4, 14)
+  };
+  const s22 = {
+    start: new Date(2019, 0, 22),
+    end: new Date(2019, 4, 14)
+  };
+  const semesters = [f19, s20, f20, s21, f21, s22];
+
+  for (var sem_index = 0; sem_index < semesters.length; sem_index++) {
+    if (
+      time < semesters[sem_index].end.getTime() &&
+      time > semesters[sem_index].start.getTime()
+    ) {
+      return semesters[sem_index];
+    } else {
+      return { start: null, end: null };
+    }
   }
 }
+
 const today = new Date();
-var semester = {
-  start: null,
-  end: null
-};
-const start_date = null;
-const end_date = null;
-semester = setSemester(today);
+var semester = getCurrentSemester(today);
 
 if (semester.start == null) {
-  var out_of_semester_text = document.getElementById("out_of_semester_text").innerHTML = "Current between semesters; no meal plans are active."
+  var out_of_semester_text = (document.getElementById(
+    "out_of_semester_text"
+  ).innerHTML = "Current between semesters; no meal plans are active.");
 } else {
   var days_in_semester = Date.daysBetween(semester.start, semester.end);
   const days_remaining = Date.daysBetween(today, semester.end);
@@ -117,11 +131,11 @@ if (semester.start == null) {
       Math.round(days_remaining * dollars_per_day)
     );
     dollars_elements[k].innerHTML = "$" + remaining_dollars_amounts[k];
-  }
-
-  for (var j = 0; j < 5; j++) {
-    var swipes_per_day = initial_swipes[j] / days_in_semester;
-    remaining_swipes_amount.push(Math.round(days_remaining * swipes_per_day));
-    swipes_elements[j].innerHTML = remaining_swipes_amount[j];
+    
+    if (k > 1) {
+      var swipes_per_day = initial_swipes[k-2] / days_in_semester;
+      remaining_swipes_amount.push(Math.round(days_remaining * swipes_per_day));
+      swipes_elements[k-2].innerHTML = remaining_swipes_amount[k-2];
+    }
   }
 }
